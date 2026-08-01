@@ -82,47 +82,28 @@ export default function MemoryLane() {
       <div style={{ 
         position: 'relative', 
         width: '100%', 
-        height: '420px', 
+        height: '440px', 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        margin: '1rem 0'
+        margin: '1.5rem 0'
       }}>
         {memories.map((memory, index) => {
           const isActive = index === activeIndex;
           const isPrev = index === (activeIndex - 1 + memories.length) % memories.length;
           const isNext = index === (activeIndex + 1) % memories.length;
           
-          let opacity = 0;
-          let transform = 'scale(0.6) translateY(50px)';
-          let zIndex = 0;
-
-          if (isActive) {
-            opacity = 1;
-            transform = `scale(1) rotate(${memory.angle})`;
-            zIndex = 5;
-          } else if (isPrev) {
-            opacity = 0.4;
-            transform = 'scale(0.75) translateX(-180px) rotate(-8deg)';
-            zIndex = 3;
-          } else if (isNext) {
-            opacity = 0.4;
-            transform = 'scale(0.75) translateX(180px) rotate(8deg)';
-            zIndex = 3;
-          }
+          let cardClass = '';
+          if (isActive) cardClass = 'active';
+          else if (isPrev) cardClass = 'prev';
+          else if (isNext) cardClass = 'next';
 
           return (
             <div
               key={index}
-              className={`polaroid-card ${isActive && isFlipped ? 'flipped' : ''}`}
+              className={`polaroid-card ${cardClass} ${isActive && isFlipped ? 'flipped' : ''}`}
               onClick={isActive ? handleCardClick : undefined}
               style={{
-                position: 'absolute',
-                opacity,
-                transform,
-                zIndex,
-                transition: 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                pointerEvents: isActive ? 'auto' : 'none',
                 '--angle': memory.angle
               }}
             >
