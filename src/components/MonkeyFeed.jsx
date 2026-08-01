@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import { Award, Zap, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
+const getImageUrl = (path) => {
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const base = import.meta.env.BASE_URL || '/';
+  const separator = base.endsWith('/') ? '' : '/';
+  return `${base}${separator}${cleanPath}`;
+};
+
 export default function MonkeyFeed({ bananas, setBananas, onFeed }) {
   const [activeMessage, setActiveMessage] = useState(
     "Click the banana below to feed your bestie chimp! 🍌"
@@ -93,7 +101,7 @@ export default function MonkeyFeed({ bananas, setBananas, onFeed }) {
         }}
       >
         <img 
-          src="aditi_5.jpg" 
+          src={getImageUrl("aditi_5.jpg")} 
           alt="Aditi Chimp Mascot" 
           style={{ 
             width: '100%', 

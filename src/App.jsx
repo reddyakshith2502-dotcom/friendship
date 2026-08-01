@@ -7,6 +7,14 @@ import Certificate from './components/Certificate';
 import HeartfeltLetter from './components/HeartfeltLetter';
 import { Heart, Sparkles, AlertCircle } from 'lucide-react';
 
+const getImageUrl = (path) => {
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const base = import.meta.env.BASE_URL || '/';
+  const separator = base.endsWith('/') ? '' : '/';
+  return `${base}${separator}${cleanPath}`;
+};
+
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [bananasFed, setBananasFed] = useState(0);
@@ -123,7 +131,7 @@ function App() {
               boxShadow: '0 0 15px rgba(244, 63, 94, 0.2)'
             }}>
               <img 
-                src="aditi_4.jpg" 
+                src={getImageUrl("aditi_4.jpg")} 
                 alt="Aditi Profile" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
               />
