@@ -123,7 +123,7 @@ function App() {
               boxShadow: '0 0 15px rgba(244, 63, 94, 0.2)'
             }}>
               <img 
-                src="/aditi_4.jpg" 
+                src="aditi_4.jpg" 
                 alt="Aditi Profile" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
               />

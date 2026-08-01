@@ -93,7 +93,7 @@ export default function MonkeyFeed({ bananas, setBananas, onFeed }) {
         }}
       >
         <img 
-          src="/aditi_5.jpg" 
+          src="aditi_5.jpg" 
           alt="Aditi Chimp Mascot" 
           style={{ 
             width: '100%', 

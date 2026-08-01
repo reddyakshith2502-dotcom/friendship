@@ -3,31 +3,31 @@ import { Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const memories = [
   {
-    imgSrc: "/aditi_5.jpg",
+    imgSrc: "aditi_5.jpg",
     title: "Maximum Chimp Mode 🐒",
     caption: "Proof that we belong in a comedy show. That big-eyes filter fits you a bit too well! Bows and all. 😂🎀",
     angle: "-3deg"
   },
   {
-    imgSrc: "/aditi_1.jpg",
+    imgSrc: "aditi_1.jpg",
     title: "Stepwell Explorers 🕌",
     caption: "Checking out ancient architecture, but mostly just posing and trying to look cool.",
     angle: "2deg"
   },
   {
-    imgSrc: "/aditi_2.jpg",
+    imgSrc: "aditi_2.jpg",
     title: "The Retro Vibe 🎞️",
     caption: "Throwback to our classic aesthetic moments. (Yes, the CAM filter makes us look like 80s movie stars).",
     angle: "-2deg"
   },
   {
-    imgSrc: "/aditi_3.jpg",
+    imgSrc: "aditi_3.jpg",
     title: "The Smile Archive 😁",
     caption: "Smiling bright and hiding the absolute chaos that goes on inside our heads on a daily basis.",
     angle: "4deg"
   },
   {
-    imgSrc: "/aditi_4.jpg",
+    imgSrc: "aditi_4.jpg",
     title: "The Sass Queen 😎",
     caption: "Aditi's official mood: 'I don't care'. Pouting and sporting those classy custom glasses.",
     angle: "-1deg"
